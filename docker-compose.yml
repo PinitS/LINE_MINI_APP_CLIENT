@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  template-react:
+    build: .
+    container_name: template-react
+    ports:
+      - "8080:80"
+    networks:
+      - docker-network
+
+networks:
+  docker-network:
+    external: true

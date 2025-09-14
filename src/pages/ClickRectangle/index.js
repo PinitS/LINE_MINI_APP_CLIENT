@@ -3,10 +3,14 @@ import styled from "styled-components";
 import IMAGE_RATIO_16_9 from "@assets/poc/IMAGE_RATIO_16_9.jpg";
 import _ from "lodash";
 import dayjs from "dayjs";
+import { Button } from "@components/Button";
+import { Text } from "@components/Text";
 
 const Container = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
+  gap: 12px;
   background: black;
   justify-content: center;
   align-items: center;
@@ -22,6 +26,34 @@ const Layout = styled.div`
   background-position: center;
 `;
 
+// [
+//     {
+//         "id": 1757413574187,
+//         "x": 201,
+//         "y": 169
+//     },
+//     {
+//         "id": 1757413575887,
+//         "x": 224,
+//         "y": 187
+//     },
+//     {
+//         "id": 1757413577736,
+//         "x": 270,
+//         "y": 187
+//     },
+//     {
+//         "id": 1757413580237,
+//         "x": 269,
+//         "y": 223
+//     },
+//     {
+//         "id": 1757413582452,
+//         "x": 221,
+//         "y": 222
+//     }
+// ]
+
 export default () => {
   const layoutRef = useRef(null);
 
@@ -36,8 +68,19 @@ export default () => {
     ]);
   };
 
+  const handleLogBlocks = () => {
+    console.log("blocks :>> ", blocks);
+  };
+
   return (
     <Container>
+      <Button
+        $backgroundColor="white"
+        $width={90}
+        onClick={() => handleLogBlocks()}
+      >
+        <Text $color={"black"}>LOGS</Text>
+      </Button>
       <Layout ref={layoutRef} onClick={(e) => handleClickLayout(e)}>
         {_.map(blocks, (item) => {
           console.log("item :>> ", item);

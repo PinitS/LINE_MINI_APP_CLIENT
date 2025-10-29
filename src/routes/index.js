@@ -8,7 +8,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <DraftPage />,
-    // element: <DraftPage />,
     // element: <LineSvg />,
     // errorElement: <ErrorPage />,
   },

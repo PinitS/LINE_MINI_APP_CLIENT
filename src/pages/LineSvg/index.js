@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import React, { useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
+import MAPS from "@assets/poc/MAPS.png";
 
 const Container = styled.div`
   flex: 1;
@@ -98,6 +99,12 @@ export default function SvgLineConnector() {
       <Button onClick={handlePlay}>▶ Play</Button>
 
       <Layout ref={layoutRef} onClick={handleClickLayout}>
+        <image
+          href={MAPS}
+          width="100%"
+          height="100%"
+          preserveAspectRatio="xMidYMid slice"
+        />
         {/* จุด */}
         {points.map((point) => (
           <circle key={point.id} cx={point.x} cy={point.y} r={6} fill="red" />

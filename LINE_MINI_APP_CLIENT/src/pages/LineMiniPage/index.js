@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffbfbf;
+  background: green;
 `;
 
 const { REACT_APP_LIFF_ID } = process.env;
